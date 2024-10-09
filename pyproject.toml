@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "2"
+name = "homework"
 version = "0.1.0"
 description = ""
 authors = ["EgorOsaulenko <egorkapomidorka4000@gmail.com>"]
+license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
