@@ -1,16 +1,16 @@
-from flask import Flask , render_template
+from flask import Flask, render_template
 
+app = Flask(__name__)
 
-app=Flask(__name__)
+CONTACT = "+380677843232"
 
-
-@app.get("/")
+@app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
-@app.get("/page_2/")
-def page_2():
-    return render_template("page_2.html")
+@app.route('/menu')
+def menu():
+    return render_template('menu.html', contact=CONTACT)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
