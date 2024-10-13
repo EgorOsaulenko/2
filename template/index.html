@@ -1,10 +1,10 @@
+{% extends "base.html" %}
 
+{% block title %}Головна - Піцерія{% endblock title %}
 
-Головна - Піцерія
-
-
+{% block content %}
     <h1>Ласкаво просимо до нашої піцерії!</h1>
     <img src="/static/image.jpeg" alt="Фото піцерії" width="250" height="250">
     <p>Найкращі піци для вас!</p>
-    <a href="{{ url_for('menu') }}">Перейти до меню</a>
-
+    <a href="{{ url_for('menu') }}" class="btn btn-success mt-3">Перейти до меню</a>
+{% endblock content %}

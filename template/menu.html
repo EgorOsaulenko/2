@@ -1,9 +1,10 @@
+{% extends "base.html" %}
 
-Меню - Піцерія
+{% block title %}Меню - Піцерія{% endblock title %}
 
-
-<h2>Меню</h2>
-    <table class="table">
+{% block content %}
+    <h2>Меню</h2>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">№</th>
@@ -13,26 +14,16 @@
             </tr>
         </thead>
         <tbody>
+            {% for pizza in pizzas %}
             <tr>
-                <th scope="row">1</th>
-                <td>Пеппероні</td>
-                <td>Тісто, томатний соус, моцарела та ковбаса пепероні.</td>
-                <td>350 грн</td>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ pizza.name }}</td>
+                <td>{{ pizza.ingredients }}</td>
+                <td>{{ pizza.price }} грн</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Моцарела</td>
-                <td>Томатний соус, сир моцарела, базилік</td>
-                <td>280 грн</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>4 сири</td>
-                <td>Пармезан, Адигейський, Моцарела та Дорблю</td>
-                <td>320 грн</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 
-    <a href="/" class="btn btn-primary mt-3">Повернутись на головну</a>
-
+    <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Повернутись на головну</a>
+{% endblock content %}
