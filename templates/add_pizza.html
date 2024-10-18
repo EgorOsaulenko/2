@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Додати піцу{% endblock title %}
+{% block content %}
+    <h1>Додати нову піцу</h1>
+    <form method="POST">
+        <label for="name">Назва:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="ingredients">Інгредієнти:</label><br>
+        <input type="text" id="ingredients" name="ingredients" required><br><br>
+        
+        <label for="price">Ціна:</label><br>
+        <input type="number" step="0.01" id="price" name="price" required><br><br>
+
+        <input type="submit" value="Додати піцу">
+    </form>
+    <a href="{{ url_for('menu') }}">Повернутися до меню</a>
+{% endblock content %}
