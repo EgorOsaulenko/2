@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{# "templates/index.html" #}
 
-{% block title %}Головна - Піцерія{% endblock title %}
+{% extends "_base.html" %}
 
 {% block content %}
-    <h1>Ласкаво просимо до нашої піцерії!</h1>
-    <img src="/static/image.jpeg" alt="Фото піцерії" width="250" height="250">
-    <p>Найкращі піци для вас!</p>
-    <a href="{{ url_for('menu') }}" class="btn btn-success mt-3">Перейти до меню</a>
+
+<h1><p>Пропонуємо таку піцу: <em>{{ pizza_name }}</em></p></h1>
+
+<a type="button", href="/menu"><em>Перейти в Мега меню</em></button>
 {% endblock content %}

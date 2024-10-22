@@ -1,5 +1,9 @@
+{# "templates/_navigation.html" #}
+
 <nav>
-    <a href="{{ url_for('index') }}">Головна</a>
-    <a href="{{ url_for('menu') }}">Меню</a>
-    <a href="{{ url_for('add_pizza') }}">Додати піцу</a>
+{% for menu_item in ["pizzas.index", "pizzas.menu"] %}
+<button>
+    <a href="{{ url_for(menu_item) }}">{{ menu_item|upper }}</a>
+</button>
+{% endfor %}
 </nav>
