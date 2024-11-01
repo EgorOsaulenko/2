@@ -1,0 +1,10 @@
+{% extends "_base.html" %}
+
+{% block content %}
+    <h1>Результати опитування</h1>
+    <ul>
+        {% for dish in dishes %}
+            <li>{{ dish.name }}: {{ dish.votes }} голосів</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

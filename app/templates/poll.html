@@ -1,0 +1,11 @@
+{% extends "_base.html" %}
+
+{% block content %}
+    <h1>Яка страва подобається найбільше?</h1>
+    <form method="POST">
+        {% for dish in dishes %}
+            <input type="radio" name="favorite" value="{{ dish.id }}"> {{ dish.name }}<br>
+        {% endfor %}
+        <input type="submit" value="Голосувати">
+    </form>
+{% endblock %}

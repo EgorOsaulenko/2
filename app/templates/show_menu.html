@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+
+{% block content %}
+    <h1>Меню</h1>
+    <table>
+        <tr>
+            <th>Назва</th>
+            <th>Опис</th>
+            <th>Ціна</th>
+            <th>Дії</th>
+        </tr>
+        {% for dish in dishes %}
+        <tr>
+            <td>{{ dish.name }}</td>
+            <td>{{ dish.description }}</td>
+            <td>{{ dish.price }} грн</td>
+            <td>
+                <a href="{{ url_for('menu.edit_dish', id=dish.id) }}">Редагувати</a> |
+                <a href="{{ url_for('menu.delete_dish', id=dish.id) }}">Видалити</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+
