@@ -1,0 +1,27 @@
+{% extends "_base.html" %}
+
+{% block title %}Додати пост{% endblock title %}
+
+{% block content %}
+    <h1>Додати новий пост</h1>
+    <form method="POST">
+        <label for="title">Заголовок:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <label for="text">Текст поста:</label><br>
+        <textarea id="text" name="text" required></textarea><br><br>
+        
+        <label for="user_id">Автор:</label><br>
+        <select id="user_id" name="user_id" required>
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.first_name }} {{ user.last_name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="password">Пароль адміністратора:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" value="Додати пост">
+    </form>
+    <a href="{{ url_for('posts.index') }}">Назад до списку постів</a>
+{% endblock content %}
